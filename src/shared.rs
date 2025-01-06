@@ -33,7 +33,7 @@ fn find_recent_downloads(dl_dir: PathBuf) -> color_eyre::Result<Vec<(SystemTime,
     Ok(downloads)
 }
 
-fn find_downloads_dir(home: PathBuf) -> color_eyre::Result<PathBuf> {
+pub fn find_downloads_dir(home: PathBuf) -> color_eyre::Result<PathBuf> {
     let mut fallback_dl_dir = home.join("Downloads");
     if !fallback_dl_dir.exists() {
         fallback_dl_dir = home.join("dl");
